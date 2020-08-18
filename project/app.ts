@@ -1,10 +1,14 @@
+//Pascal naming convention (upper case) because it's a custom type
+//By default, enum variables are assigned numeric values starting at 0:
+//Therefore, admin = 0, read_only = 1, & author = 2
+enum Role {admin, read_only, author};
 
 /* const person: {
     name: string;
     age: number
 } = { */
 // better syntax: inferred types
-const person: {
+/* const person: {
     name: string;
     age: number;
     hobbies: string[];
@@ -13,10 +17,17 @@ const person: {
     name: 'Laura',
     age: 45,
     hobbies: ['swimming', 'programming', 'yoga', 'chess'],
-    role: [ 2, 'user']
-};
+    role: [ 2, 'author]
+}; */
 // person.role.push('admin')  *** push method can alter a tuple
 // array type assignment
+
+const person = {
+    name: 'Laura',
+    age: 45,
+    hobbies: ['swimming', 'programming', 'yoga', 'chess'],
+    role: Role.author
+}
 let favoriteActivities: string[];
 favoriteActivities = ['swimming']
 
@@ -24,4 +35,8 @@ console.log(person.name);
 
 for (const hobby of person.hobbies) {
     console.log(hobby);
+}
+
+if (person.role === Role.author) {
+    console.log('is author')
 }
