@@ -22,13 +22,13 @@ enum Role {admin, read_only, author};
 // person.role.push('admin')  *** push method can alter a tuple
 // array type assignment
 
-const person = {
+var person = {
     name: 'Laura',
     age: 45,
     hobbies: ['swimming', 'programming', 'yoga', 'chess'],
     role: Role.author
 }
-let favoriteActivities: string[];
+var favoriteActivities: string[];
 favoriteActivities = ['swimming']
 
 console.log(person.name);
