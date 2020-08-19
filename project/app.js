@@ -1,44 +1,14 @@
-//Pascal naming convention (upper case) because it's a custom type
-//By default, enum variables are assigned numeric values starting at 0:
-//Therefore, admin = 0, read_only = 1, & author = 2
-var Role;
-(function (Role) {
-    Role[Role["admin"] = 0] = "admin";
-    Role[Role["read_only"] = 1] = "read_only";
-    Role[Role["author"] = 2] = "author";
-})(Role || (Role = {}));
-;
-/* const person: {
-    name: string;
-    age: number
-} = { */
-// better syntax: inferred types
-/* const person: {
-    name: string;
-    age: number;
-    hobbies: string[];
-    role: [number, string]; // role is a tuple & requires explicit type assignments
-} = {
-    name: 'Laura',
-    age: 45,
-    hobbies: ['swimming', 'programming', 'yoga', 'chess'],
-    role: [ 2, 'author]
-}; */
-// person.role.push('admin')  *** push method can alter a tuple
-// array type assignment
-var person = {
-    name: 'Laura',
-    age: 45,
-    hobbies: ['swimming', 'programming', 'yoga', 'chess'],
-    role: Role.author
-};
-var favoriteActivities;
-favoriteActivities = ['swimming'];
-console.log(person.name);
-for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
-    var hobby = _a[_i];
-    console.log(hobby);
+function combine(input1, input2) {
+    var result;
+    if (typeof input1 === 'number' && typeof input2 === 'number') {
+        result = input1 + input2;
+    }
+    else {
+        result = input1.toString() + input2.toString();
+    }
+    return result;
 }
-if (person.role === Role.author) {
-    console.log('is author');
-}
+var combinedAges = combine(30, 26);
+console.log(combinedAges);
+var combinedNames = combine('Sofia', 'Max');
+console.log(combinedNames);
