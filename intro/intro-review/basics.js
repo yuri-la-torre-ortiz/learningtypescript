@@ -1,3 +1,4 @@
+"use strict";
 function add(n1, n2, showResult, phrase) {
     var result = n1 + n2;
     if (showResult) {
@@ -9,6 +10,7 @@ function add(n1, n2, showResult, phrase) {
 }
 var number1;
 number1 = 5;
+//implicit type assignment aka type inference examples:
 var number2 = 2.8;
 var printResult = true;
 var resultPhrase = 'Result is: ';
